@@ -1,7 +1,7 @@
 // import Loadable  from 'react-loadable'
 
-import Home from "client/app/home.jsx";
-import User from "client/app/user.jsx";
+import Home from "client/app/Home.jsx";
+import User from "client/app/User.jsx";
 import PageNotFound from "client/app/404.jsx";
 
 import AcademyList from "client/app/academylist/AcademyList.jsx";

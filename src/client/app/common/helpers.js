@@ -1,4 +1,4 @@
-const checkDevices = {
+export const checkDevices = {
   android: function() {
     return navigator.userAgent.match(/Android/i);
   },
@@ -38,26 +38,13 @@ export const isEmpty = value =>
   value === null ||
   (typeof value === "object" && Object.keys(value).length === 0) ||
   (typeof value === "string" && value.trim().length === 0);
-// export const addClassAndRemove = (el, className, value) => {
-//   let el = document.querySelector(el);
-//   if (value == 0) {
-//     el.classList.add(className);
-//     menu = 1;
-//   } else {
-//     el.classList.remove(className);
-//     menu = 0;
-//   }
-// };
 
-export const addClassById = (id,value) => {
+export const addClassById = (id, value) => {
   let el = document.getElementById(id);
   el.classList.add(value);
 };
 
-export const removeClassById = (id,value) => {
+export const removeClassById = (id, value) => {
   let el = document.getElementById(id);
   el.classList.remove(value);
 };
-
-
-export default checkDevices;
