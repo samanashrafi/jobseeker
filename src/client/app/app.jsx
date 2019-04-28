@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import RedirectWithStatus from "client/app/redirect-w-status.jsx";
 import routeOptions from "client/routes/routes";
 import jwt_decode from "jwt-decode";
@@ -43,16 +43,20 @@ class App extends Component {
   componentDidMount() {
     // this.props.citesFetch();
     // store.dispatch(citesFetch());
-    // this.props.districtFetch();
     this.getHeightWindow();
+    window.addEventListener("scroll", this.getHeightWindow);
   }
-  getHeightWindow() {
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.getHeightWindow);
+  }
+  getHeightWindow = () => {
     let layout =
       document.getElementsByTagName("header")[0].offsetHeight -
       document.getElementsByTagName("footer")[0].offsetHeight;
     document.getElementById("container-main").style.minHeight =
       window.innerHeight + layout + "px";
-  }
+  };
+
   render() {
     let routes = routeOptions.routes.map(({ path, component, exact }, i) => (
       <Route
@@ -71,9 +75,9 @@ class App extends Component {
       />
     ));
     return (
-      <div>
+      <Fragment>
         <Header />
-        <div id="container-main">
+        <div id="container-main" onChange={this.getHeightWindow}>
           <Switch>
             {routes}
             {redirects}
@@ -81,7 +85,7 @@ class App extends Component {
         </div>
 
         <Footer />
-      </div>
+      </Fragment>
     );
   }
 }
