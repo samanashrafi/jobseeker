@@ -100,7 +100,7 @@ class Search extends Component {
     } = this.state;
     const { cites, category } = this.props;
     return (
-      <div className="home-search">
+      <div className="search">
         <div className="container-center">
           <h2>من دنبال کار هستم!!!</h2>
           <form className="filter art" onSubmit={this.onSubmit}>
