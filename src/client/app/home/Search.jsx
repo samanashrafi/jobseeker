@@ -100,55 +100,57 @@ class Search extends Component {
     } = this.state;
     const { cites, category } = this.props;
     return (
-      <div className="search">
-        <div className="container-center">
-          <h2>من دنبال کار هستم!!!</h2>
-          <form className="filter art" onSubmit={this.onSubmit}>
-            <div className="form-select">
-              <TextFieldGroup
-                type="text"
-                name="text"
-                label="عنوان شغلی، مهارت یا..."
-                value={text}
-                onChange={this.onChange}
-                error={errors.text}
-                icon={"k-edit"}
-              />
-            </div>
-            <div className="form-select">
-              <MultiSelectFieldGroup
-                title={categores}
-                name="categores"
-                headerDefault={categoryHeader}
-                list={categoryList}
-                listFetch={categoryListFetch}
-                setList={this.toggleMultiSelected}
-                icon={"k-bars"}
-                multi={true}
-                // field={"_id"}
-                error={errors.SearchCategory}
-                isLoaded={category.isLoaded}
-              />
-            </div>
-            <div className="form-select">
-              <MultiSelectFieldGroup
-                title={city}
-                name={"city"}
-                headerDefault={cityHeader}
-                list={cityList}
-                listFetch={cityFetch}
-                setList={this.toggleSelected}
-                icon={"k-map-marker-alt"}
-                error={errors.city}
-                isLoaded={cites.isLoaded}
-              />
-            </div>
+      <div className="rw">
+        <div className="cl-d-5">
+          <div className="search">
+            <h2>من دنبال کار هستم!!!</h2>
+            <form className="filter art" onSubmit={this.onSubmit}>
+              <div className="form-select">
+                <TextFieldGroup
+                  type="text"
+                  name="text"
+                  label="عنوان شغلی، مهارت یا..."
+                  value={text}
+                  onChange={this.onChange}
+                  error={errors.text}
+                  icon={"k-edit"}
+                />
+              </div>
+              <div className="form-select">
+                <MultiSelectFieldGroup
+                  title={categores}
+                  name="categores"
+                  headerDefault={categoryHeader}
+                  list={categoryList}
+                  listFetch={categoryListFetch}
+                  setList={this.toggleMultiSelected}
+                  icon={"k-bars"}
+                  multi={true}
+                  // field={"_id"}
+                  error={errors.SearchCategory}
+                  isLoaded={category.isLoaded}
+                />
+              </div>
+              <div className="form-select">
+                <MultiSelectFieldGroup
+                  title={city}
+                  name={"city"}
+                  headerDefault={cityHeader}
+                  list={cityList}
+                  listFetch={cityFetch}
+                  setList={this.toggleSelected}
+                  icon={"k-map-marker-alt"}
+                  error={errors.city}
+                  isLoaded={cites.isLoaded}
+                />
+              </div>
 
-            <button className="btn">
-              <div className="text">جستجو</div>
-              <div className="spinners" />
-            </button>
-          </form>
+              <button className="btn">
+                <div className="text">جستجو</div>
+                <div className="spinners" />
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     );
