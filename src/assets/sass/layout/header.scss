@@ -2,11 +2,9 @@ header {
   background: #fff;
   padding: 15px 0px;
   min-width: 320px;
-  border-top: 1px solid $border-color;
-  border-left: 1px solid $border-color;
-  // width: calc(100% - #{$aside-padding} - 40px);
+  border-bottom: 1px solid $border-color;
   @include transition(0.3s);
-  @include box-shadow(0 0 12px 2px #f1f1f1);
+  // @include box-shadow(0 0 12px 2px #f1f1f1);
 
   #hamburger-menu {
     display: none;

@@ -97,11 +97,9 @@ class Header extends Component {
     );
 
     return (
-      <header>
-        <div className="container-center">
+      <header className="container-center">
           <Link to="/" className="logo">
             <img src={Logo} alt="الو کلاس" title="الو کلاس" />
-            {/* <span>الوکلاس اولین سایت معرفی آموزشگاه‌های ایران</span> */}
           </Link>
           <div
             id="hamburger-menu"
@@ -115,7 +113,7 @@ class Header extends Component {
           <div id="side-menu" className="menu">
             <ul className="overley">
               <li>
-                <Link to="/">صفحه اصلی</Link>
+                <Link to="/search">فرصت های شغلی</Link>
               </li>
               {/* <li>
                 <span>
@@ -138,10 +136,13 @@ class Header extends Component {
                 </ul>
               </li> */}
               <li>
-                <Link to="/partner2">درخواست همکاری</Link>
+                <Link to="/employer"> جذب نیرو (کارفرمایان)</Link>
               </li>
               <li>
-                <Link to="/aboutme"> درباره جابینجا</Link>
+                <Link to="/maker">  رزومه ساز</Link>
+              </li>
+              <li>
+                <Link to="/aboutme"> درباره جابسیکر</Link>
               </li>
               <li>
                 <Link to="/contactus">تماس با ما</Link>
@@ -149,10 +150,6 @@ class Header extends Component {
             </ul>
           </div>
           {auth ? authLinks : guestLinks}
-
-          {/* <Modal context={"sasasdasd"} /> */}
-          <div className="select-city">تهران</div>
-        </div>
       </header>
     );
   }
